@@ -1,0 +1,41 @@
+.skeletonContainer {
+  width: 80%;
+  margin: -4em auto;
+}
+.cardSK {
+  margin-right: 12px;
+  margin-bottom: 30px;
+  position: relative;
+  column-count: 3;
+}
+
+.photoSk {
+  background-color: #ebe9e9;
+  width: 274px;
+  border-radius: 6px;
+  height: 50vh;
+  animation: skeleton 1s ease infinite alternate;
+}
+@keyframes skeleton {
+  to {
+    opacity: 0.5;
+  }
+}
+.photoDetailsSk1 {
+  background-color: #a9a9aa;
+  height: 30px;
+  position: absolute;
+  width: 200px;
+  bottom: 175px;
+  margin-left: 20px;
+  border-radius: 4px;
+}
+.photoDetailsSk2 {
+  background-color: #a9a9aa;
+  height: 30px;
+  position: absolute;
+  width: 150px;
+  bottom: 140px;
+  margin-left: 20px;
+  border-radius: 4px;
+}

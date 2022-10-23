@@ -1,0 +1,28 @@
+.header {
+  background-color: #dbdddf;
+  height: 40vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+form.search-box {
+  width: 80%;
+  margin: auto;
+  background-color: #ffff;
+  border-radius: 8px;
+}
+input {
+  width: 90%;
+  padding: 1.5rem 0rem;
+  margin-left: 2rem;
+  /* padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 7rem;
+    padding-right: 1rem; */
+  border: none;
+  outline: none;
+  font-size: 1rem;
+}
+input::placeholder {
+  font-size: 1rem;
+}
