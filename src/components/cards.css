@@ -10,7 +10,7 @@
   margin: 20px;
 }
 
-.card h3 .card p {
+.card h3, .card p {
   margin: 0 !important;
   padding: 0 !important;
 }
@@ -47,6 +47,6 @@ img {
 }
 @media (max-width: 500px) {
   .grid-section {
-    column-count: 2;
+    column-count: 1;
   }
 }
