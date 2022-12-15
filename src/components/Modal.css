@@ -42,3 +42,12 @@
     margin: 20px auto !important;
     
 }
+@media(max-width:768px) {
+    .modal{
+        height: 50vh;
+        width: 80%;
+    
+    }
+    
+    
+}
