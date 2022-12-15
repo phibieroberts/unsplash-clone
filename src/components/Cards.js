@@ -4,14 +4,16 @@ import Card from "./Card";
 import axios from "axios";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
+import { useContext } from "react";
+import { searchContext } from "../context/SearchContext";
 
 function Cards() {
+  const { searchData, setSearchData, query } = useContext(searchContext);
+  console.log(searchData, "appeared in cards");
   const [image, setImage] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [query, setQuery] = useState(false);
-  const url = query
-    ? `https://api.unsplash.com/search/photos?client_id=3Qw8LYxA51BT-xKIqwUkhB1EbZ5A3Zkbe8qqx4qefls&page=1&query=${query}`
-    : "https://api.unsplash.com/photos?client_id=3Qw8LYxA51BT-xKIqwUkhB1EbZ5A3Zkbe8qqx4qefls&per_page=8";
+  const url =
+    "https://api.unsplash.com/photos?client_id=3Qw8LYxA51BT-xKIqwUkhB1EbZ5A3Zkbe8qqx4qefls&per_page=8";
 
   useEffect(() => {
     setTimeout(() => {
@@ -27,15 +29,16 @@ function Cards() {
         });
     }, 3000);
   }, []);
-  console.log(image);
+  console.log(image, "check image");
+  console.log(searchData.length, "check search");
   return (
     <div>
       {loading && <h1>Loading........</h1>}
 
       <div className="grid-section">
-        {image?.map((item) => {
-          return <Card item={item} />;
-        })}
+        {searchData.length > 0
+          ? searchData.map((item, index) => <Card item={item} key={index} />)
+          : image.map((item, index) => <Card item={item} key={index} />)}
       </div>
     </div>
   );

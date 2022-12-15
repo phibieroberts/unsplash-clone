@@ -5,17 +5,12 @@
   width: auto;
   color: #fff;
   text-align: left;
-  /* background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%); */
   transition: 0.5;
   z-index: 3;
   margin: 20px;
 }
 
-h3 {
-  margin: 0 !important;
-  padding: 0 !important;
-}
-p {
+.card h3 .card p {
   margin: 0 !important;
   padding: 0 !important;
 }
@@ -27,7 +22,8 @@ p {
   margin-right: auto;
   column-count: 3;
   grid-gap: 2rem;
-  position: relative;
+  /* position: relative; */
+  z-index: -1;
 }
 
 .card {
@@ -40,4 +36,17 @@ p {
 img {
   width: 100%;
   border-radius: 8px;
+}
+@media (max-width: 800px) {
+  .grid-section {
+    column-count: 2;
+  }
+  .card-overlay {
+    padding: 8px;
+  }
+}
+@media (max-width: 500px) {
+  .grid-section {
+    column-count: 2;
+  }
 }

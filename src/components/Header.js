@@ -1,20 +1,23 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
+import { useContext } from "react";
 import "./header.css";
 import { FaSearch } from "react-icons/fa";
 import axios from "axios";
+import { searchContext } from "../context/SearchContext";
 
 function Header() {
-  const [query, setQuery] = useState("");
-
+  const { query, setQuery, searchData, setSearchData } =
+    useContext(searchContext);
   useEffect(() => {
     axios
       .get(
         `https://api.unsplash.com/search/photos?client_id=3Qw8LYxA51BT-xKIqwUkhB1EbZ5A3Zkbe8qqx4qefls&page=1&query=${query}`
       )
       .then((res) => {
-        console.log(res.data);
+        console.log(res.data, "result");
+        setSearchData(res.data.results);
       });
-  });
+  }, [query]);
   return (
     <div className="header">
       <form className="search-box">
